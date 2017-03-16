@@ -5,18 +5,20 @@ import {
   Text,
   ScrollView,
   TouchableHighlight,
-} from 'react-native'
+} from 'react-native';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default class Profile extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {
-    return(
-      <View style={{flexDirection: 'row', flex: 18}}>
+    return (
+      <View style={{flexDirection: 'row', flex: 1}}>
         <ScrollView>
           <View style={{flexDirection: 'column', flex: 1}}>
             {/* First Card */}

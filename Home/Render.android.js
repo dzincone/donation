@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import {
   View,
@@ -9,23 +9,31 @@ import {
 
 import { TabNavigator } from 'react-navigation';
 
-import Profile from "./Profile";
+import Profile from "../Profile/Component";
+import Games from "../Games/Component";
+import Settings from "../Settings/Component";
 import Footer from "./Footer";
 import Header from "./Header";
+import Home from "./Component";
 
 
 
 
-export default function render() {
+export default class Render extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render(){
   const Tabs = TabNavigator({
     Profile: {
       screen: Profile,
     },
     Games: {
-      screen: Profile,
+      screen: Games,
     },
     Settings: {
-      screen: Profile,
+      screen: Settings,
     },
   }, {
     tabBarComponent: Footer,
@@ -34,12 +42,13 @@ export default function render() {
 
   return (
     <View style={{flex: 1, backgroundColor: '#bdc3c7'}}>
-      <Header />
+      <Header navigation={this.props.navigation}/>
 
       <View style={{flex: 1}}>
-        <Tabs screenProps={{gameStatistics: this.state.gameStatistics, recentGames: this.state.recentGames}}/>
+        <Tabs screenProps={{gameStatistics: this.props.screenProps.gameStatistics, recentGames: this.props.screenProps.recentGames, loadMoreGames: this.props.screenProps.loadMoreGames}}/>
       </View>
 
     </View>
   );
+}
 }

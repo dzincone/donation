@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 
 import Render from './Render';
 
+import { DrawerNavigator } from 'react-navigation';
+import Drawer from "./Drawer";
+
+
 export default class Home extends Component {
 
   constructor() {
@@ -21,6 +25,17 @@ export default class Home extends Component {
   }
 
   render() {
-    return Render.bind(this)();
+    const DrawerMenu = DrawerNavigator({
+      Home: {
+        screen: Render,
+      }
+    },{
+      contentComponent: Drawer,
+      drawerPosition: 'left',
+    });
+
+    return (
+      <DrawerMenu screenProps={{recentGames: this.state.recentGames, gameStatistics: this.state.gameStatistics, loadMoreGames: this.loadMoreGames}}/>
+    );
   }
 }

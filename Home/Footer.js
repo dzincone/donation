@@ -26,11 +26,6 @@ export default class Footer extends Component {
           <Icon name="cash-usd" size={40} color="white" style={{textAlign: 'center'}}/>
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Settings')}>
-          <View style={{flex: 1, backgroundColor: this.props.navigationState.index === 2 ? '#4fdec1' : 'transparent'}}>
-          <Icon name="settings" size={40} color="white" style={{textAlign: 'center'}}/>
-          </View>
-        </TouchableWithoutFeedback>
       </View>
     );
   }

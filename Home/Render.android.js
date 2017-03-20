@@ -32,9 +32,6 @@ export default class Render extends Component {
     Games: {
       screen: Games,
     },
-    Settings: {
-      screen: Settings,
-    },
   }, {
     tabBarComponent: Footer,
     tabBarPosition: 'bottom',
